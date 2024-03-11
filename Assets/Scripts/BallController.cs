@@ -14,7 +14,7 @@ public class BallController : MonoBehaviour
     public float dragMultiplier = 1f;
     [Header("Lowest object size")]
     public float minScale = 0.3f;
-    public Vector3 initialPosition;
+    public static Vector3 initialPosition;
 
     public AudioClip shrinkSound;
     public AudioClip enlargeSound;
@@ -81,11 +81,6 @@ public class BallController : MonoBehaviour
         AdjustMassAndDrag();
 
         UpdateCameraPosition();
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetBallPosition();
-        }
     }
 
     void AdjustMassAndDrag()
@@ -106,10 +101,4 @@ public class BallController : MonoBehaviour
         mainCamera.transform.position = transform.position + cameraOffset;
     }
 
-    void ResetBallPosition()
-    {
-        transform.position = initialPosition;
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-    }
 }
