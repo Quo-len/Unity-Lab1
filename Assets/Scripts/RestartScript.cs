@@ -24,7 +24,7 @@ public class RestartScript : MonoBehaviour
         EventManager.OnClicked -= Restart;
     }
 
-    void Restart()
+    public void Restart()
     {
         audioSource.clip = clickSoundClip;
         transform.position = BallController.initialPosition;

@@ -9,8 +9,12 @@ public class CollisionManager : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Endrew"))
         {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.gameObject.GetComponent<RestartScript>().Restart();
+            }
             if (OnTouched != null)
                 OnTouched();
         }

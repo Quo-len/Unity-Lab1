@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
+    public int collectedCoins = 0;
     [Range(5f, 100f)]
     public float speed = 10f;
     [Range(0.01f, 5f)]
